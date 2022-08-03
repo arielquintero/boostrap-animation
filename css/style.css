@@ -9,6 +9,75 @@
   color: #fff;
 }
 
+.navMenu {
+  display: flex;
+  text-align: end;
+
+}
+
+.navMenu a {
+  color: #f6f4e6;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+
+.navMenu a:hover {
+  color: #3aa5fda1;
+}
+
+.navMenu .dot {
+  width: 6px;
+  height: 6px;
+  background: #3aa5fda1;
+  border-radius: 50%;
+  opacity: 0;
+  -webkit-transform: translateX(0);
+  transform: translateX(0);
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+
+.navMenu a:nth-child(1):hover ~ .dot {
+  -webkit-transform: translateX(-31.56em);
+  transform: translateX(-31.56em);
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+  opacity: 1;
+}
+
+.navMenu a:nth-child(2):hover ~ .dot {
+  -webkit-transform: translateX(-26em);
+  transform: translateX(-26em);
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+  opacity: 1;
+}
+
+.navMenu a:nth-child(3):hover ~ .dot {
+  -webkit-transform: translateX(-19.75em);
+  transform: translateX(-19.75em);
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+  opacity: 1;
+}
+
+.navMenu a:nth-child(4):hover ~ .dot {
+  -webkit-transform: translateX(-11.62em);
+  transform: translateX(-11.62em);
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+  opacity: 1;
+}
+
+.navMenu a:nth-child(5):hover ~ .dot {
+  -webkit-transform: translateX(-3.12em);
+  transform: translateX(-3.12em);
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+  opacity: 1;
+}
+
+
 /* 
 .principal {
   overflow: hidden;
@@ -40,7 +109,6 @@
   background-size: cover;
   background-position: center center;
   padding: 15vh 8vw;
-  /* transition: all 0.70s ease-in-out; */
 }
 
 /* -----------MAIN-------------------- */
@@ -83,13 +151,18 @@ Para oscurecer el fondo
 
 /* ------------ANIMATION RECURSOS---- */
 
-a {
+.styleRecursos {
+  padding-left: 4vh;
+  padding-right: 4vh;
+}
+
+.card-link {
 	text-decoration: none;
 }
 
 .contenedor {
-	max-width: 1200px;
-	margin:50px auto;
+	max-width: 75em;
+	margin:3.12rem auto;
 	display: flex;
 	flex-direction: row;
 	flex-wrap: wrap;
@@ -97,37 +170,33 @@ a {
 }
 
 .contenedor_tarjeta {
-	margin: 20px;
-}
-
-.contenedor_tarjeta a {
-	display: inline-block;
+	margin: 1.25em;
+  width: 31.2em;
+  display: inline-block;
+  padding-block: 3.12em;
+  margin-inline: 3.12em;
 }
 
 .contenedor_tarjeta:hover figure {
-	transform: perspective(600px) rotateY(180deg);
+	transform: perspective(37.5rem) rotateY(180deg);
 	-webkit-box-shadow: 0px 2px 10px 2px rgba(0,0,0,0.25);
 	-moz-box-shadow: 0px 2px 10px 2px rgba(0,0,0,0.25);
 	box-shadow: 0px 2px 10px 2px rgba(0,0,0,0.25);
 }
 
-.contenedor_tarjeta:hover figure img {
-	/* Si queremos podemos aplicar un efecto blur a nuestra imagen al girar */
-	/*filter:blur(2px);*/
-}
+/* Si queremos podemos aplicar un efecto blur a nuestra imagen al girar */
+/* .contenedor_tarjeta:hover figure img {
+	filter:blur(2px);
+} */
 
 figure {
-	width: 300px;
-	height: 350px;
+	width: 100%;
+	height: 21.87em;
 	margin:0;
 	position: relative;
 	transition: all ease .5s;
 	transform-style: preserve-3d;
-	/* Nota:
-		Establecemos que la imagen tendra una rotacion de 0grados al inicio porque si no
-		ponemos esta propiedad nos da un poco de problemas en algunos navegadores al pasar el cursor.
-	*/
-	transform: perspective(600px) rotateY(0deg);
+	transform: perspective(37.5em) rotateY(0deg);
 }
 
 figure .frontal,
@@ -143,7 +212,7 @@ figure .frontal {
 	background: #000;
 
 	/* Podemos ocultar la imagen al da la vuelta si lo queremos */
-	/*backface-visibility: hidden;*/
+	/* backface-visibility: hidden; */
 }
 
 figure .trasera {
@@ -151,14 +220,76 @@ figure .trasera {
 	top: 0;
 	padding: 20px;
 	color: #fff;
-	transform: perspective(600px) rotateY(180deg);
+	transform: perspective(37.5rem) rotateY(180deg);
 	backface-visibility: hidden;
 	overflow: auto;
 }
 
+.contenedor_tarjeta:nth-child(1) figure .trasera{
+	background: rgba(223,234,241,0.7);
+  background: -moz-linear-gradient(top, rgba(223,234,241,0.7) 0%, rgba(15,99,144,1) 100%);
+	background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(223,234,241,0.7)), color-stop(100%, rgba(15,99,144,1)));
+	background: -webkit-linear-gradient(top, rgba(223,234,241,0.7) 0%, rgba(15,99,144,1) 100%);
+	background: -o-linear-gradient(top, rgba(223,234,241,0.7) 0%, rgba(15,99,144,1) 100%);
+	background: -ms-linear-gradient(top, rgba(223,234,241,0.7) 0%, rgba(15,99,144,1) 100%);
+	background: linear-gradient(to top, rgba(223,234,241,0.7) 0%, rgba(15,99,144,1) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#dfeaf1', endColorstr='#0f6390', GradientType=0 );
+}
 
+.contenedor_tarjeta:nth-child(2) figure .trasera{
+	background: rgba(251,232,202,0.7);
+  background: -moz-linear-gradient(top, rgba(251,232,202,0.7) 0%, rgba(25,44,72,1) 100%);
+	background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(251,232,202,0.7)), color-stop(100%, rgba(25,44,72,1)));
+	background: -webkit-linear-gradient(top, rgba(251,232,202,0.7) 0%, rgba(25,44,72,1) 100%);
+	background: -o-linear-gradient(top, rgba(251,232,202,0.7) 0%, rgba(25,44,72,1) 100%);
+	background: -ms-linear-gradient(top, rgba(251,232,202,0.7) 0%, rgba(25,44,72,1) 100%);
+	background: linear-gradient(to top, rgba(251,232,202,0.7) 0%, rgba(25,44,72,1) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fbe8ca', endColorstr='#192c48', GradientType=0 );
+}
 
+.contenedor_tarjeta:nth-child(3) figure .trasera{
+	background: rgba(95,58,53,0.7);
+  background: -moz-linear-gradient(top, rgba(95,58,53,0.7) 0%, rgba(221,32,47,1) 100%);
+  background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(95,58,53,0.7)), color-stop(100%, rgba(221,32,47,1)));
+	background: -webkit-linear-gradient(top, rgba(95,58,53,0.7) 0%, rgba(221,32,47,1) 100%);
+	background: -o-linear-gradient(top, rgba(95,58,53,0.7) 0%, rgba(221,32,47,1) 100%);
+	background: -ms-linear-gradient(top, rgba(95,58,53,0.7) 0%, rgba(221,32,47,1) 100%);
+	background: linear-gradient(to top, rgba(95,58,53,0.7) 0%, rgba(221,32,47,1) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#5f3a35', endColorstr='#dd202f', GradientType=0 );
+}
+.contenedor_tarjeta:nth-child(4) figure .trasera{
+	background: rgba(53, 95, 86, 0.7);
+  background: -moz-linear-gradient(top, rgba(53, 95, 86, 0.7) 0%, rgb(145, 32, 221) 100%);
+  background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(53, 95, 86, 0.7)), color-stop(100%, rgba(145, 32, 221)));
+	background: -webkit-linear-gradient(top, rgba(53, 95, 86, 0.7) 0%, rgba(145, 32, 221) 100%);
+	background: -o-linear-gradient(top, rgba(53, 95, 86, 0.7) 0%, rgba(145, 32, 221) 100%);
+	background: -ms-linear-gradient(top, rgba(53, 95, 86, 0.7) 0%, rgba(145, 32, 221) 100%);
+	background: linear-gradient(to top, rgba(53, 95, 86, 0.7) 0%, rgba(145, 32, 221) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fbe8ca', endColorstr='#dd202f', GradientType=0 );
+}
 
+figure .trasera .titulo {
+	color: #fff;
+	font-weight: 700;
+	margin-bottom: 20px;
+	font-size: 24px;
+  text-align: center;
+}
+
+figure .trasera hr {
+	height: 2px;
+	background: #fff;
+	border: none;
+	margin-bottom: 20px;
+	opacity: .5;
+}
+
+figure .trasera p {
+	/* font-family: 'Open Sans', sans-serif; */
+	line-height: 22px;
+	font-size: 14px;
+  font-weight: 300;
+}
 
 /* ------------ANIMATION RECURSOS---- */
 
@@ -170,7 +301,6 @@ figure .trasera {
   animation-delay: 0.5s;
   animation-direction: alternate;
   animation-iteration-count: infinite;
-  /* animation: cambiaColor 3s 0.5s infinite alternate; */
 }
 @keyframes cambiaColor {
   0% { color: #fff; }
@@ -178,7 +308,7 @@ figure .trasera {
   100% { color: rgb(85, 68, 68); }
 }
 
-/*    ANIMATION BOTON HOME     */
+/*   START ANIMATION BOTON HOME     */
 .botonHome {
   display:inline-block;
   border-radius:8px;
@@ -198,7 +328,10 @@ figure .trasera {
   transform:scale(1.2);
 }
 
-/*      HOME         */
+/*    END ANIMATION BOTON HOME     */
+
+
+/*      START HOME         */
 
 .principal,
 .secundario,
@@ -216,10 +349,10 @@ figure .trasera {
   /* font-size: 8vh; */
   font-size: 3em;
 }
-/*      HOME         */
+/*      END HOME         */
 
 
-/*      NOSOTROS       */
+/*      START NOSOTROS       */
 .card {
   background:none;
   border:none;
@@ -231,9 +364,9 @@ figure .trasera {
 .card-text {
   text-align: justify;
 }
-/*      NOSOTROS       */
+/*      END NOSOTROS       */
 
-/*    RECURSOS         */
+/*    START RECURSOS         */
 
 .card-group {
   max-width: 1200px;
@@ -257,11 +390,10 @@ figure .trasera {
   border-radius: 5%;
   border: none;
 }
-/*    RECURSOS         */
+/*    END RECURSOS         */
 
 
-
-/*    CIELNTE         */
+/*    START CIELNTE         */
 .textClient,
 .textTitle {
   color: #b2a5c0;
@@ -271,12 +403,12 @@ figure .trasera {
 .textClient {
   font-weight: bold;
 }
-/*    CIELNTE         */
+/*    END CIELNTE         */
 
 
-/*    FORMULARIO     */
+/*    START FORMULARIO     */
 .widthForm {
-  max-width: 70%;
+  max-width: 80%;
 }
 
 .botonForm,
@@ -293,6 +425,7 @@ figure .trasera {
   opacity: 0.3;
 }
 
+/*    END FORMULARIO     */
 
 
 /* Extra large device (large desktop, 1200px and up) */
@@ -342,7 +475,7 @@ figure .trasera {
     font-size: 1em;
   }
   .widthForm {
-    width: 100%;
+    max-width: 36em;
   }
 
   @keyframes typing {
@@ -358,4 +491,20 @@ figure .trasera {
       border-color: transparent;
     }
   }
+
+  /*  ANIMACION RECURSOS.HTML */
+  figure .trasera {
+		backface-visibility:visible;
+		transform: perspective(37.5rem) rotateY(0deg);
+	}
+
+  .contenedor_tarjeta:hover figure {
+		transform: perspective(37.5rem) rotateY(0deg);	
+	}
+
+  .collapse {
+    display: flex;
+    justify-content: start;
+  }
+
 }
